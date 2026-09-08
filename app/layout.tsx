@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 function getSiteUrl() {
-  // The site is served from the josephceline subdomain. metadataBase must match
+  // The site is served from the eliechristine subdomain. metadataBase must match
   // the real host, otherwise Open Graph images resolve to an absolute URL on
   // the wrong domain (the apex) and chat crawlers like WhatsApp fail to
   // download the preview image. NEXT_PUBLIC_SITE_URL can override this.
@@ -11,7 +11,7 @@ function getSiteUrl() {
     process.env.NEXT_PUBLIC_SITE_URL ??
     process.env.VERCEL_PROJECT_PRODUCTION_URL ??
     process.env.VERCEL_URL ??
-    "https://josephceline.mywedding.events";
+    "https://eliechristine.mywedding.events";
 
   return new URL(
     configuredUrl.startsWith("http") ? configuredUrl : `https://${configuredUrl}`,
@@ -27,33 +27,33 @@ const previewImage = {
   url: coverImageUrl,
   width: 1200,
   height: 630,
-  alt: "Joseph and Celine wedding invitation",
+  alt: "Elie and Christine wedding invitation",
   type: "image/jpeg",
 };
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
-  title: "Joseph & Celine - Wedding Invitation",
+  title: "Elie & Christine - Wedding Invitation",
   description:
-    "Wedding invitation for Joseph and Celine on Sunday, October 11, 2026.",
+    "Wedding invitation for Elie and Christine on Sunday, October 11, 2026.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
-    title: "Joseph & Celine - Wedding Invitation",
+    title: "Elie & Christine - Wedding Invitation",
     description:
-      "Wedding invitation for Joseph and Celine on Sunday, October 11, 2026.",
+      "Wedding invitation for Elie and Christine on Sunday, October 11, 2026.",
     url: siteUrl.toString(),
-    siteName: "Joseph & Celine Wedding Invitation",
+    siteName: "Elie & Christine Wedding Invitation",
     type: "website",
     locale: "en_US",
     images: [previewImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Joseph & Celine - Wedding Invitation",
+    title: "Elie & Christine - Wedding Invitation",
     description:
-      "Wedding invitation for Joseph and Celine on Sunday, October 11, 2026.",
+      "Wedding invitation for Elie and Christine on Sunday, October 11, 2026.",
     images: [previewImage],
   },
 };

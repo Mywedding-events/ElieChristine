@@ -27,8 +27,8 @@ const translations = {
       "Together",
     ],
     languageLabel: "Choose a language",
-    joseph: "Joseph",
-    celine: "Celine",
+    groomName: "Elie",
+    brideName: "Christine",
     namesAnd: "&",
     together: "Together is a beautiful place to be",
     startAria: "Start the invitation and play music",
@@ -42,19 +42,14 @@ const translations = {
     scroll: "Scroll",
     verse: "“What God has joined together, let no one separate.”",
     verseReference: "— Matthew 19:6 —",
-    firstParents: ["Charbel & Maguy", "Massoud"],
-    secondParents: ["Jamil & Georgette", "Abou Rjeily"],
-    invite:
-      "Joyfully invite you to share in the wedding of their son and daughter",
+    invite: "With great joy, we invite you to celebrate our wedding",
     weddingDate: "Sunday, 11 October 2026",
     ceremony: "Wedding Ceremony",
-    ceremonyTime: "October 11 · 5:00 PM",
-    church: "St. Georges Church",
-    town: "Akoura",
+    ceremonyTime: "October 11 · 7:00 PM",
+    church: "St. Fawka Church",
     churchLocation: "Church Location",
     reception: "Followed by Reception & Dinner",
-    venue: "Byblos Palace",
-    receptionTime: "Welcome drink at 7:00 PM · Dinner at 8:00 PM",
+    venue: "Plaza Palace Tabarja",
     venueLocation: "Venue Location",
     giftList: "Wedding Gift List",
     giftIntro: "Your presence is enough of a present to us!",
@@ -94,8 +89,8 @@ const translations = {
       "معًا",
     ],
     languageLabel: "اختر اللغة",
-    joseph: "جوزاف",
-    celine: "سيلين",
+    groomName: "إيلي",
+    brideName: "كريستين",
     namesAnd: "و",
     together: "معًا يحلو كل شيء",
     startAria: "ابدأ الدعوة وشغّل الموسيقى",
@@ -109,18 +104,14 @@ const translations = {
     scroll: "مرّر",
     verse: "«فما جمعه الله لا يفرّقه إنسان.»",
     verseReference: "— متّى 19:6 —",
-    firstParents: ["شربل و ماغي", "مسعود"],
-    secondParents: ["جميل و جورجيت", "أبو رجيلي"],
-    invite: "يسرّهم أن يدعوكم لمشاركتهم فرحة زفاف\nابنهما وابنتهما",
+    invite: "بكل فرح، ندعوكم لمشاركتنا فرحة زفافنا",
     weddingDate: "الأحد، 11 تشرين الأول 2026",
     ceremony: "مراسم الزفاف",
-    ceremonyTime: "11 تشرين الأول · الساعة 5:00 مساءً",
-    church: "كنيسة مار جرجس",
-    town: "العاقورة",
+    ceremonyTime: "11 تشرين الأول · الساعة 7:00 مساءً",
+    church: "كنيسة مار فوقا",
     churchLocation: "موقع الكنيسة",
     reception: "يلي المراسم حفل استقبال وعشاء",
-    venue: "بيبلوس بالاس",
-    receptionTime: "مشروب ترحيبي الساعة 7:00 مساءً · العشاء الساعة 8:00 مساءً",
+    venue: "بلازا بالاس",
     venueLocation: "موقع الحفل",
     giftList: "لائحة الهدايا",
     giftIntro: "حضوركم أجمل هدية لنا!",
@@ -155,7 +146,7 @@ const translations = {
 type Language = keyof typeof translations;
 type InvitationError = "not-found" | "load" | "";
 type RsvpError = "submit" | "";
-const weddingDate = new Date("2026-10-11T17:00:00+03:00").getTime();
+const weddingDate = new Date("2026-10-11T19:00:00+03:00").getTime();
 
 type Countdown = {
   days: string;
@@ -979,9 +970,9 @@ export default function WeddingInvitation({
           <span className="wedding-diamond mt-11" aria-hidden="true" />
 
           <h1 className="text-shadow-wedding font-script mt-7 whitespace-nowrap pb-[0.12em] text-[clamp(45px,13vw,66px)] leading-none text-[var(--ink)]">
-            {copy.joseph}{" "}
+            {copy.groomName}{" "}
             <span className="text-[var(--gold)]">{copy.namesAnd}</span>{" "}
-            {copy.celine}
+            {copy.brideName}
           </h1>
           <p className="text-shadow-wedding mt-3 text-[clamp(16px,4.5vw,19px)] italic text-[var(--ink-soft)]">
             {copy.together}
@@ -1021,11 +1012,11 @@ export default function WeddingInvitation({
         >
           <div className="w-full max-w-[430px]">
             <h1 className="reveal text-shadow-wedding font-script my-[0.12em] flex flex-col items-center pb-[0.08em] text-[clamp(58px,16vw,88px)] leading-[0.9] text-[var(--ink)]">
-              <span>{copy.joseph}</span>
+              <span>{copy.groomName}</span>
               <span className="text-[0.62em] leading-[0.72]">
                 {copy.namesAnd}
               </span>
-              <span>{copy.celine}</span>
+              <span>{copy.brideName}</span>
             </h1>
             <p className="reveal text-shadow-wedding font-serif-wedding text-[clamp(22px,6vw,30px)] italic leading-tight text-(--ink)">
               {copy.gettingMarried}
@@ -1097,27 +1088,15 @@ export default function WeddingInvitation({
               {copy.verseReference}
             </p>
             <div className="wedding-rule reveal" />
-            <p className="reveal text-shadow-wedding grid grid-cols-2 items-center gap-x-2 text-[clamp(17px,4.4vw,21px)] font-semibold leading-[1.45] text-[var(--ink)]">
-              <span className="flex flex-col gap-1">
-                {copy.firstParents.map((parent) => (
-                  <span key={parent}>{parent}</span>
-                ))}
-              </span>
-              <span className="flex flex-col gap-1">
-                {copy.secondParents.map((parent) => (
-                  <span key={parent}>{parent}</span>
-                ))}
-              </span>
-            </p>
-            <p className="reveal text-shadow-wedding mt-3 whitespace-pre-line text-[clamp(17px,4.5vw,20px)] leading-[1.55] text-[var(--ink)]">
+            <p className="reveal text-shadow-wedding mt-3 text-[clamp(17px,4.5vw,20px)] leading-[1.55] text-[var(--ink)]">
               {copy.invite}
             </p>
             <p className="reveal text-shadow-wedding font-script mt-2 text-[clamp(42px,11vw,58px)] leading-[1.05] text-(--ink)">
-              {copy.joseph}
+              {copy.groomName}
               <br />
               {copy.namesAnd}
               <br />
-              {copy.celine}
+              {copy.brideName}
             </p>
             <p className="reveal text-shadow-wedding text-[clamp(18px,4.8vw,21px)] leading-[1.75] text-[var(--ink)]">
               {copy.weddingDate}
@@ -1143,12 +1122,9 @@ export default function WeddingInvitation({
             <p className="reveal text-shadow-wedding mt-1 text-[clamp(17px,4.6vw,21px)] font-semibold leading-[1.55] text-(--ink) min-[390px]:leading-[1.75]">
               {copy.church}
             </p>
-            <p className="reveal text-shadow-wedding text-[clamp(17px,4.6vw,21px)] leading-[1.55] text-(--ink) min-[390px]:leading-[1.75]">
-              {copy.town}
-            </p>
             <ButtonLink
               className="reveal mt-4 max-[380px]:px-5 max-[380px]:py-[11px] max-[380px]:text-sm min-[390px]:mt-[22px]"
-              href="https://maps.app.goo.gl/8bXCoBUVUMAksLuK8"
+              href="https://maps.app.goo.gl/wdg6CGrwtx2vHT3d7"
             >
               {copy.churchLocation}
             </ButtonLink>
@@ -1159,12 +1135,9 @@ export default function WeddingInvitation({
             <p className="reveal text-shadow-wedding mt-2.5 text-[clamp(17px,4.6vw,21px)] font-semibold leading-[1.55] text-(--ink) min-[390px]:mt-3.5 min-[390px]:leading-[1.75]">
               {copy.venue}
             </p>
-            <p className="reveal text-shadow-wedding text-[clamp(16px,4.2vw,19px)] leading-[1.55] text-(--ink-soft) min-[390px]:leading-[1.75]">
-              {copy.receptionTime}
-            </p>
             <ButtonLink
               className="reveal mt-4 max-[380px]:px-5 max-[380px]:py-[11px] max-[380px]:text-sm min-[390px]:mt-[18px]"
-              href="https://maps.app.goo.gl/mDFjtZfYtjht6bcg9?g_st=aw"
+              href="https://maps.app.goo.gl/WjYHt6hGfaGVvx148"
             >
               {copy.venueLocation}
             </ButtonLink>

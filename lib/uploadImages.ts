@@ -1,4 +1,5 @@
-import { readdir } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 
 const uploadsDirectory = path.join(process.cwd(), "public", "uploads");
@@ -6,7 +7,7 @@ const uploadsDirectory = path.join(process.cwd(), "public", "uploads");
 export async function getNumberedUploadImages(): Promise<string[]> {
   const entries = await readdir(uploadsDirectory, { withFileTypes: true });
 
-  return entries
+  const images = entries
     .flatMap((entry) => {
       if (!entry.isFile()) return [];
 
@@ -24,6 +25,14 @@ export async function getNumberedUploadImages(): Promise<string[]> {
       if (left.number < right.number) return -1;
       if (left.number > right.number) return 1;
       return left.name.localeCompare(right.name);
-    })
-    .map(({ name }) => `/uploads/${encodeURIComponent(name)}`);
+    });
+
+  return Promise.all(
+    images.map(async ({ name }) => {
+      const contents = await readFile(path.join(uploadsDirectory, name));
+      // Replacing a file must also change its URL to bypass cached images.
+      const version = createHash("sha256").update(contents).digest("hex").slice(0, 16);
+      return `/uploads/${encodeURIComponent(name)}?v=${version}`;
+    }),
+  );
 }
