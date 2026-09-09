@@ -35,14 +35,14 @@ export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: "Elie & Christine - Wedding Invitation",
   description:
-    "Wedding invitation for Elie and Christine on Sunday, October 11, 2026.",
+    "Wedding invitation for Elie and Christine on Saturday, August 21, 2027.",
   alternates: {
     canonical: siteUrl,
   },
   openGraph: {
     title: "Elie & Christine - Wedding Invitation",
     description:
-      "Wedding invitation for Elie and Christine on Sunday, October 11, 2026.",
+      "Wedding invitation for Elie and Christine on Saturday, August 21, 2027.",
     url: siteUrl.toString(),
     siteName: "Elie & Christine Wedding Invitation",
     type: "website",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Elie & Christine - Wedding Invitation",
     description:
-      "Wedding invitation for Elie and Christine on Sunday, October 11, 2026.",
+      "Wedding invitation for Elie and Christine on Saturday, August 21, 2027.",
     images: [previewImage],
   },
 };

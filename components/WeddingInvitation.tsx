@@ -37,15 +37,15 @@ const translations = {
     click: "Click",
     toStart: "to Start",
     gettingMarried: "Are getting married!",
-    date: "Sunday · October 11 · 2026",
+    date: "Saturday · August 21 · 2027",
     countdown: ["Days", "Hours", "Mins", "Secs"],
     scroll: "Scroll",
     verse: "“What God has joined together, let no one separate.”",
     verseReference: "— Matthew 19:6 —",
     invite: "With great joy, we invite you to celebrate our wedding",
-    weddingDate: "Sunday, 11 October 2026",
+    weddingDate: "Saturday, 21 August 2027",
     ceremony: "Wedding Ceremony",
-    ceremonyTime: "October 11 · 7:00 PM",
+    ceremonyTime: "August 21 · 7:00 PM",
     church: "St. Fawka Church",
     churchLocation: "Church Location",
     reception: "Followed by Reception & Dinner",
@@ -59,7 +59,7 @@ const translations = {
     accountCopied: "Copied!",
     accountCopyError: "Unable to copy. Please copy the number manually.",
     rsvp: "Kindly RSVP",
-    confirmBy: "Please confirm before September 30, 2026",
+    confirmBy: "Please confirm before August 10, 2027",
     inviteeCount: "Number of invitees:",
     loadingInvitation: "Loading your invitation...",
     invitationNotFound: "This invitation code was not found.",
@@ -99,15 +99,15 @@ const translations = {
     click: "اضغط",
     toStart: "للبدء",
     gettingMarried: "سيتزوّجان!",
-    date: "الأحد · 11 تشرين الأول · 2026",
+    date: "السبت · 21 آب · 2027",
     countdown: ["يوم", "ساعة", "دقيقة", "ثانية"],
     scroll: "مرّر",
     verse: "«فما جمعه الله لا يفرّقه إنسان.»",
     verseReference: "— متّى 19:6 —",
     invite: "بكل فرح، ندعوكم لمشاركتنا فرحة زفافنا",
-    weddingDate: "الأحد، 11 تشرين الأول 2026",
+    weddingDate: "السبت، 21 آب 2027",
     ceremony: "مراسم الزفاف",
-    ceremonyTime: "11 تشرين الأول · الساعة 7:00 مساءً",
+    ceremonyTime: "21 آب · الساعة 7:00 مساءً",
     church: "كنيسة مار فوقا",
     churchLocation: "موقع الكنيسة",
     reception: "يلي المراسم حفل استقبال وعشاء",
@@ -121,7 +121,7 @@ const translations = {
     accountCopied: "تم النسخ!",
     accountCopyError: "تعذّر النسخ. يرجى نسخ الرقم يدويًا.",
     rsvp: "تأكيد الحضور",
-    confirmBy: "يرجى التأكيد قبل 30 أيلول 2026",
+    confirmBy: "يرجى التأكيد قبل 10 آب 2027",
     inviteeCount: "عدد المدعوين:",
     loadingInvitation: "جارٍ تحميل دعوتكم...",
     invitationNotFound: "لم يتم العثور على رمز الدعوة هذا.",
@@ -146,7 +146,7 @@ const translations = {
 type Language = keyof typeof translations;
 type InvitationError = "not-found" | "load" | "";
 type RsvpError = "submit" | "";
-const weddingDate = new Date("2026-10-11T19:00:00+03:00").getTime();
+const weddingDate = new Date("2027-08-21T19:00:00+03:00").getTime();
 
 type Countdown = {
   days: string;
